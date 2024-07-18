@@ -1,0 +1,191 @@
+img,iframe,picture,svg,video,button {
+	user-select: none !important;
+}
+
+body *::selection {
+	background-color: #367acc !important;
+	color: white !important;
+}
+
+/* STEP GAMES STYLES */
+
+.steps-nav.nav-focus {
+	position: fixed !important;
+	bottom: 0px;
+	left: 23px;
+	display: block;
+  right: auto;
+  width: 100% !important;
+  max-width: none;
+}
+
+@media (max-width: 680px) {
+	
+.steps-nav.nav-focus .gem-button-container.next-game {
+	float: right;
+}
+
+.steps-nav.nav-focus .gem-button-container.prev-game {
+	float: left;
+}
+
+}
+
+.game-area-wrapper:has( .nav-focus) {
+	display: flex;
+	justify-content: center;
+}
+
+.single-thegem_pf_item #main {
+	display: initial !important;
+  margin: 0 !important;
+	height: 100vh !important;
+	max-height: none !important;
+}
+
+.single-thegem_pf_item #main-content {
+	height: 100% !important;
+	max-height: none !important;
+}
+
+.single-thegem_pf_item #page #main {
+	max-height: none !important;
+  height: 100% !important;
+  position: initial !important;
+}
+
+.single-thegem_pf_item footer {
+	margin: 0 !important;
+  position: relative;
+  bottom: -4px !important;
+}
+
+.single-thegem_pf_item footer {
+	display: none !important;		
+}
+
+.next-game a.disabled {
+	opacity: 0.5;
+	pointer-events: none !important;
+	touch-action: none !important;
+	transform: scale(0.8);
+}
+
+.next-game:has( .disabled) {
+    cursor: not-allowed;
+}
+
+.prev-game a.disabled {
+	opacity: 0.5;
+	pointer-events: none !important;
+	touch-action: none !important;
+	transform: scale(0.8);
+}
+
+.prev-game:has( .disabled) {
+    cursor: not-allowed;
+}
+
+.prev-game a.hidden, .next-game a.hidden {
+	display: none !important;
+}
+
+.game-step {
+	transition: opacity 0.5s ease-in-out !important;
+}
+
+.hidden-step {
+	visibility: hidden !important;
+	position: absolute !important;
+	pointer-events: none !important;
+	touch-action: none !important;
+	opacity: 0 !important;
+}
+
+
+/* STEP GAMES STYLES END */
+
+
+/* CONFETTI EFFECT STYLES START */
+  
+  #confetti-canvas {
+		z-index: -1;
+		position: fixed;
+		top: 0 !important;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+  }
+
+#confetti-canvas.visible {
+		z-index: 5;
+}
+
+.steps-nav {
+	z-index: 10;
+}
+
+/* CONFETTI EFFECT STYLES END */
+
+/* FIX FOOTER IN PORTFOLIO SINGLE GAME PAGE */
+body.single-thegem_pf_item .block-content:last-of-type {
+	padding-bottom: 0 !important;
+}
+
+/* FIX FOOTER END */
+
+.hidden-wow {
+	display: none !important;
+}
+
+.pojo-a11y-toolbar-toggle {
+	top: 70px;
+}
+
+/* PORTFOLIO PARENT PAGE GRID STYLES */
+
+.gem-button-container:has(+ .locked-label) {
+	display: none !important;
+}
+
+.portfolio-item:has( .coming-soon) .difficulty, .portfolio-item:has( .coming-soon) .points-to-be-rewarded {
+	display: none !important;
+}
+
+.image.thegem_pf_item:has( .locked-label) ~ .caption .play-now .gem-button-container, .image.thegem_pf_item:has( .locked-label) ~ .caption .caption-separator ~ .info, .image.thegem_pf_item:has( .locked-label) ~ .caption .caption-separator ~ .requirements, .image.thegem_pf_item:has( .locked-label) ~ .caption .points-to-be-rewarded {
+	display: none !important;
+}
+
+.user-points-indicator {
+    position: fixed;
+    font-size: 24px;
+		font-weight: bold;
+    left: 10px;
+    height: 60px !important;
+    bottom: 80px !important;
+    z-index: 999999;
+    background: #fd722e;
+    color: #fff !important;
+    padding: 20px;
+    border-radius: 15px;
+    width: auto !important;
+    max-width: none;
+    max-height: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-item:has( div.coming-soon) {
+	opacity: 0.5; 
+}
+
+.portfolio-item:has( div.locked-label) .image-inner > div {
+	opacity: 0.5; 
+}
+
+.portfolio-item:has( div.coming-soon) {
+	touch-action: none !important;
+	pointer-events: none !important;
+}

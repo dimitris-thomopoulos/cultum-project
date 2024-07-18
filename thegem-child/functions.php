@@ -6,14 +6,14 @@ require_once get_stylesheet_directory() . '/inc/utility.php';
 
 // h5p mods - alter h5p plugin styles
 
-function MYPLUGIN_alter_styles(&$styles, $libraries, $embed_type) {
+function h5p_alter_styles(&$styles, $libraries, $embed_type) {
   $styles[] = (object) array(
     // Path must be relative to wp-content/uploads/h5p or absolute.
     'path' => 'https://cultum.gr/wp-content/uploads/styles-h5p.css',
     'version' => '?ver=0.1' // Cache buster
   );
 }
-add_action('h5p_alter_library_styles', 'MYPLUGIN_alter_styles', 10, 3);
+add_action('h5p_alter_library_styles', 'h5p_alter_styles', 10, 3);
 
 
 
@@ -111,7 +111,7 @@ function fetch_content_ids_by_tag($tag) {
 	<div id="main-game" class="vc_row wpb_row vc_row-fluid thegem-custom-6692ce142ff156610">
 		<div class="wpb_column vc_column_container vc_col-sm-12 thegem-custom-6692ce142ffc29466">
 			<div class="vc_column-inner thegem-custom-inner-6692ce142ffc3 ">
-				<div class="wpb_wrapper thegem-custom-6692ce142ffc29466">
+				<div class="wpb_wrapper step-wrapper thegem-custom-6692ce142ffc29466">
                                     <!--SEPARATOR START-->
                                     
         <?php
@@ -125,7 +125,7 @@ function fetch_content_ids_by_tag($tag) {
 						class="vc_row wpb_row vc_inner vc_row-fluid game-step hidden-step thegem-custom-6692ce14300be5251 custom-inner-column-6692ce14300c1">
 						<div class="wpb_column vc_column_container vc_col-sm-12 thegem-custom-6692ce14301755376">
 							<div class="vc_column-inner thegem-custom-inner-6692ce1430176 ">
-								<div class="wpb_wrapper thegem-custom-6692ce14301755376">
+								<div class="wpb_wrapper game-area-wrapper thegem-custom-6692ce14301755376">
 									<div class="wpb_text_column wpb_content_element  thegem-vc-text thegem-custom-6692ce14301e03260">
 										<div class="wpb_wrapper">' . do_shortcode('[h5p id="' . $current_game_id . '"]') . '
 										</div>
@@ -166,7 +166,7 @@ function fetch_content_ids_by_tag($tag) {
                                     <!--SEPARATOR END-->
 					<div
 						class="vc_row wpb_row steps-nav vc_inner vc_row-fluid thegem-custom-6692ce1430dd47636 vc_column-gap-15 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex custom-inner-column-6692ce1430dd8">
-						<div class="wpb_column vc_column_container vc_col-sm-4 thegem-custom-6692ce1430e828721">
+						<div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-6692ce1430e828721">
 							<div class="vc_column-inner thegem-custom-inner-6692ce1430e83 ">
                                                             <div class="wpb_wrapper thegem-custom-6692ce1430e828721">
                                                                 <style type="text/css">
@@ -186,8 +186,8 @@ function fetch_content_ids_by_tag($tag) {
                                                             </div>
 							</div>
 						</div>
-                                                <div class="wpb_column vc_column_container vc_col-sm-4 thegem-custom-669464c90e6a37215"><div class="vc_column-inner thegem-custom-inner-669464c90e6a4 "><div class="wpb_wrapper thegem-custom-669464c90e6a37215"><style type="text/css">.thegem-button-669464c90e7414754 .gem-button svg {fill: #ffffff;}</style><div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main"><a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);" onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';" onmouseenter="this.style.backgroundColor='#f99b27';" href="https://cultum.gr/play/" target="_self"><i class="gem-print-icon gem-icon-pack-material "></i></a></div> </div></div></div>
-						<div class="wpb_column vc_column_container vc_col-sm-4 thegem-custom-6692ce1430f0c5924">
+                                                <div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-669464c90e6a37215"><div class="vc_column-inner thegem-custom-inner-669464c90e6a4 "><div class="wpb_wrapper thegem-custom-669464c90e6a37215"><style type="text/css">.thegem-button-669464c90e7414754 .gem-button svg {fill: #ffffff;}</style><div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main"><a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);" onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';" onmouseenter="this.style.backgroundColor='#f99b27';" href="https://cultum.gr/play/" target="_self"><i class="gem-print-icon gem-icon-pack-material "></i></a></div> </div></div></div>
+						<div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-6692ce1430f0c5924">
                                                     <div class="vc_column-inner thegem-custom-inner-6692ce1430f0d ">
 							<div class="wpb_wrapper thegem-custom-6692ce1430f0c5924">
 									<style type="text/css">
