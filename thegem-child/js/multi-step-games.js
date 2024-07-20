@@ -61,28 +61,36 @@ if (baseUrl == 'https://cultum.gr/capital') {
                 }, 250)
             }
             
-            // Check if the current step-game has already been completed by the current user, and hide or show the navigation buttons
-            if ((localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) == 'true') && (window.currentStep < window.gameSteps.length) ) {
-                window.nextLevelBtn.classList.remove('disabled');
-            } else {
-                if (!(window.nextLevelBtn.classList.contains('disabled')) ){
-                    window.nextLevelBtn.classList.add('disabled');
-                }
-            }
-    
-            // toggle the hiding of the previous level button in the first game level
-            if (window.currentStep > 1) {
-                window.prevLevelBtn.classList.remove('disabled');
-                window.prevLevelBtn.classList.remove('hidden');
-            } else if ((window.currentStep == 1) && !(window.prevLevelBtn.classList.contains('disabled')) ){
-                window.prevLevelBtn.classList.add('disabled');
-                window.prevLevelBtn.classList.add('hidden');
-            }
+            switch (true) {
+                // hide the "previous level" button in the first game level
+                case (window.currentStep == 1):
+                    if (!(window.prevLevelBtn.classList.contains('hidden')) ){
+                        window.prevLevelBtn.classList.add('hidden');
+                    }
+                    break;
+                // toggle the hiding of the "previous level" and "next level" buttons in the levels in between
+                case ((window.currentStep > 1) && (window.currentStep < window.gameSteps.length)):
+                    
+                    window.prevLevelBtn.classList.remove('hidden');
+                    window.prevLevelBtn.classList.remove('disabled');
             
-            if (window.currentStep == window.gameLevels.length && !(window.nextLevelBtn.classList.contains('disabled')) ){
-                window.nextLevelBtn.classList.add('disabled');
-//                window.nextLevelBtn.classList.add('hidden');
-            }
+                    // Check if the current level has already been completed by the current user, and if this is true then show the "next level" button
+                    if ((localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) == 'true')) {
+                        window.nextLevelBtn.classList.remove('disabled');
+                        window.nextLevelBtn.classList.remove('hidden');
+                    }
+                    
+                    break;
+                case (window.currentStep == gameSteps.length):
+                    
+                    window.prevLevelBtn.classList.remove('hidden');
+                    window.prevLevelBtn.classList.remove('disabled');
+                    
+                    if (!(window.nextLevelBtn.classList.contains('hidden')) ){
+                        window.nextLevelBtn.classList.add('hidden');
+                    }
+                    break;
+            }   
         }
 
         // Handle previous button logic
@@ -90,11 +98,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             
             console.log('clicked!');
             e.preventDefault();
-            
-            if (stepsNav.classList.contains('nav-focus')) {
-                stepsNav.classList.remove('nav-focus');
-            }
-                        
+                     
             window.currentStep--;
         
             //  Hide the level from which the player is leaving
@@ -109,10 +113,6 @@ if (baseUrl == 'https://cultum.gr/capital') {
         function handleNextClick(e) {
             console.log('clicked!');
             e.preventDefault();
-            
-            if (stepsNav.classList.contains('nav-focus')) {
-                stepsNav.classList.remove('nav-focus');
-            }
             
             window.currentStep++;
         

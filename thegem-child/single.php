@@ -29,24 +29,19 @@ get_header(); ?>
 							$template->post_content = str_replace(array('[vc_row ', '[vc_row]', '[vc_section ', '[vc_section]'), array('[vc_row template_fw="1" ', '[vc_row template_fw="1"]','[vc_section template_fw="1" ', '[vc_section template_fw="1"]'), $template->post_content);
 							$GLOBALS['thegem_template_type'] = 'portfolio';
                                                         
-                                                        // dimitris - disable default content of single portfolio page template (disable WP bakery)
-//							echo do_shortcode($template->post_content);
                                                         
-//                                                         dimitris - call function from functions.php
+                                                        if ( is_singular( 'thegem_pf_item' ) ) {
+                                                            global $post;
+                                                            $post_slug = $post->post_name;
+                                                            fetch_content_ids_by_tag($post_slug);
                                                             
-                                                        global $post;
-                                                        $post_slug = $post->post_name;
-                                                        fetch_content_ids_by_tag($post_slug);
+                                                            //  dimitris - call function from functions.php
+                                                            //  print (new ReflectionFunction("gamipress_ajax_get_achievements"))->getFileName();
+                                                        } else {
+                                                            // dimitris - disable default content of single portfolio page template (disable WP bakery)    
+                                                            echo do_shortcode($template->post_content);
+                                                        }
                                                             
-                                                        
-
-                                                            
-                                                        
-                                                            
-                                                        
-                                                        
-                                            
-                                                        
                                                         
 							unset($GLOBALS['thegem_template_type']);
 						?>
