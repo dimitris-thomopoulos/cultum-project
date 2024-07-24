@@ -4,6 +4,7 @@ var pageUrl = window.location.href;
 var baseUrl = pageUrl.substring(0, 25);
 var slug = pageUrl.substring(26, (pageUrl.length-1));
 
+if (baseUrl == 'https://cultum.gr/capital') {
 (function ($) {
     $(document).ready(function () {
         
@@ -48,7 +49,7 @@ var slug = pageUrl.substring(26, (pageUrl.length-1));
             // check if a game level is completed
             if ( event.getVerb() === 'completed' || (typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" &&  eventDefinition["interactionType"] !== "choice" ) || ((typeof scoreObject !== "undefined")) && (eventScaledScore === 1) && (typeof event.data.statement.object.definition["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) {
                 console.log('Completed event detected.');
-                window.isGameCompleted = `${slug}GameNo-${window.currentStep}-Completed`;
+                window.isGameCompleted = `${slug}GameCompleted`;
                             
                 //  show the "Finish Game" button if the level which the user just completed is the final level
                 if (window.currentStep === window.gameSteps.length) {
@@ -63,19 +64,30 @@ var slug = pageUrl.substring(26, (pageUrl.length-1));
                 }
                 
                 // check if user has completed all game levels AND hasn't received the capital achievement yet
-                if (window.hasCompletedAllLevels && window.userHasEarnedAchievement) {
+                if (window.hasCompletedAllLevels && localStorage.getItem(window.isGameCompleted) !== 'true') {
+                    
                     window.finishGameBtn.classList.remove('hidden');
-                    window.finishGameBtn.addEventListener('click', (e) => {
+                    const handleClick = (e) => {
                         e.preventDefault();
-                        popConfetti();
+                        popFinishConfetti();
                         window.finishGameBtn.classList.add('hidden');
-                    });
+                            
+                        // Remove the event listener
+                        window.finishGameBtn.removeEventListener('click', handleClick);
+                        localStorage.setItem(window.isGameCompleted, 'true');
+                    };
+
+                    window.finishGameBtn.addEventListener('click', handleClick);
                 }
+
                 
                 //  if not already completed the specific game, update statically the points and coins of the player in the UI and pop the confetti
                 if (localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) !== 'true') {
                     
-                    window.isGameCompleted = `${slug}GameNo-${window.currentStep}-Completed`;
+//                    window.isGameCompleted = `${slug}GameNo-${window.currentStep}-Completed`;
+                    
+                    // locally store data that the specific game is now completed by the player
+                    localStorage.setItem(`${slug}GameNo-${window.currentStep}-Completed`, 'true');
                     
                     // live exploration points and coins counters update
                     if ((typeof(scoreObject) !== "undefined")) {
@@ -83,13 +95,13 @@ var slug = pageUrl.substring(26, (pageUrl.length-1));
                         // live exploration points counter update
                         if (Number(pointsIndicators[0].innerText.replace('.', '')) >= 1000) {
                             let thousandSeparatorIndex = pointsIndicators[0].innerText.indexOf('.');
-                            let newPoints = `${Number(pointsIndicators[0].innerText.replace('.', '')) + 200}`;
+                            let newPoints = `${Number(pointsIndicators[0].innerText.replace('.', '')) + scoreObject}`;
                             
                             pointsIndicators[0].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
                             pointsIndicators[1].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
                         } else {
-                            pointsIndicators[0].innerHTML = Number(pointsIndicators[0].innerText) + 200;
-                            pointsIndicators[1].innerHTML = Number(pointsIndicators[1].innerText) + 200;
+                            pointsIndicators[0].innerHTML = `${Number(pointsIndicators[0].innerText) + scoreObject}`;
+                            pointsIndicators[1].innerHTML = `${Number(pointsIndicators[1].innerText) + scoreObject}`;
                         }
                         
                         // live coins counter update
@@ -100,14 +112,11 @@ var slug = pageUrl.substring(26, (pageUrl.length-1));
                             coinsIndicators[0].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
                             coinsIndicators[1].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
                         } else {
-                            coinsIndicators[0].innerHTML = Number(coinsIndicators[0].innerText) + 200;
-                            coinsIndicators[1].innerHTML = Number(coinsIndicators[1].innerText) + 200;
+                            coinsIndicators[0].innerHTML = `${Number(coinsIndicators[0].innerText) + 200}`;
+                            coinsIndicators[1].innerHTML = `${Number(coinsIndicators[1].innerText) + 200}`;
                         }
                     }
-                    
-                    // locally store data that the specific game is now completed by the player
-                    localStorage.setItem(`${slug}GameNo-${window.currentStep}-Completed`, 'true');
-                    
+                                        
                     if (window.currentStep < window.gameSteps.length) {
                         // enable the "next level" button to allow the user to unlock and move to the next level
                         window.nextLevelBtn.classList.remove('disabled');
@@ -129,3 +138,4 @@ var slug = pageUrl.substring(26, (pageUrl.length-1));
     });
 
 })(jQuery);
+}

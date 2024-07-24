@@ -1,0 +1,11 @@
+.h5p-game-map p, .h5p-game-map span {
+    color: red !important;
+}
+
+.h5p-game-map .toolbar-buttons {
+    display: none !important;
+}
+
+.h5p-content > .h5p-container.h5p-standalone {
+    border: none !important;
+}

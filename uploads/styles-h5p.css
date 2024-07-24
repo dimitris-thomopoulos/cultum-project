@@ -2,7 +2,8 @@
     color: green !important;
 }
 
-.h5p-game-map .toolbar-buttons {
+/*disable fullscreen*/
+.h5p-game-map .toolbar-buttons, .h5p-enable-fullscreen {
     display: none !important;
 }
 

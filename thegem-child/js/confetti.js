@@ -120,5 +120,28 @@ setTimeout(() => {
     cancelAnimationFrame(animationFrameId);
     canvas.classList.remove('visible');
   }, 1000);
+}, 1500);   
+}
+
+function popFinishConfetti() {
+
+canvas.style.opacity = 1;
+canvas.width = W;
+canvas.height = H;
+
+canvas.classList.add('visible');
+
+Draw();
+
+// Change opacity to 0% after 3 seconds
+setTimeout(() => {
+  canvas.style.transition = "opacity 1s linear";
+  canvas.style.opacity = 0;
+
+  // Stop creating confetti after the transition
+  setTimeout(() => {
+    cancelAnimationFrame(animationFrameId);
+    canvas.classList.remove('visible');
+  }, 1000);
 }, 3000);   
 }

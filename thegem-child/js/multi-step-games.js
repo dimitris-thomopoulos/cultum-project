@@ -2,10 +2,10 @@
 
 var pageUrl = window.location.href;
 var baseUrl = pageUrl.substring(0, 25);
-var slug = document.querySelector('meta[name="page-slug"]').getAttribute('content');
 
-
-if (baseUrl == 'https://cultum.gr/capital') {    
+if (baseUrl == 'https://cultum.gr/capital') {
+    
+    var slug = document.querySelector('meta[name="page-slug"]').getAttribute('content');
     
     if (window.location.hash) {
         var url = window.location.href.split('#')[0];
@@ -67,6 +67,12 @@ if (baseUrl == 'https://cultum.gr/capital') {
                     if (!(window.prevLevelBtn.classList.contains('hidden')) ){
                         window.prevLevelBtn.classList.add('hidden');
                     }
+                    
+                    if ((localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) == 'true')) {
+                        window.nextLevelBtn.classList.remove('disabled');
+                        window.nextLevelBtn.classList.remove('hidden');
+                    }
+                    
                     break;
                 // toggle the hiding of the "previous level" and "next level" buttons in the levels in between
                 case ((window.currentStep > 1) && (window.currentStep < window.gameSteps.length)):
@@ -78,6 +84,8 @@ if (baseUrl == 'https://cultum.gr/capital') {
                     if ((localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) == 'true')) {
                         window.nextLevelBtn.classList.remove('disabled');
                         window.nextLevelBtn.classList.remove('hidden');
+                    } else {
+                        window.nextLevelBtn.classList.add('disabled');
                     }
                     
                     break;
@@ -98,7 +106,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             
             console.log('clicked!');
             e.preventDefault();
-                     
+
             window.currentStep--;
         
             //  Hide the level from which the player is leaving

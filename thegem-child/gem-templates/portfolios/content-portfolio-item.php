@@ -72,16 +72,16 @@ if (!isset($portfolio_item_size)) { ?>
                                                 $user_id = get_current_user_id();
                                                 
                                                 $achievement_id = get_field('capital-achievement-id');
-                                                $achievement_exists = gamipress_is_achievement($achievement_id);
-                                                
                                                 
                                                 $has_earned = gamipress_has_user_earned_achievement($achievement_id, $user_id);
-                                                
-                                                if ( $achievement_exists && $has_earned ) {
+                                                                                            
+                                                if ($has_earned) {
                                                     $completion_label = 'COMPLETED!'; 
                                                 } else {
                                                     $completion_label = 'NOT COMPLETED';
                                                 }
+                                                
+                                                echo $completion_label;
                                                 
                                                 if (get_field('coming-soon'))  {
                                                     $status_label = 'DISABLED';
