@@ -11,8 +11,8 @@ if (baseUrl == 'https://cultum.gr/capital') {
         let i=1;
          
         var stepsNav = document.querySelector('.steps-nav');
-        var pointsIndicators = [...document.querySelectorAll('.gamipress-inline-points-exploration-points-amount')];
-        var coinsIndicators = [...document.querySelectorAll('.gamipress-inline-points-coins-amount')];
+        var pointsIndicators = [...document.querySelectorAll('.gamipress-points:nth-of-type(2) .gamipress-user-points-amount')];
+        var coinsIndicators = [...document.querySelectorAll('.gamipress-points:nth-of-type(1) .gamipress-user-points-amount')];
         
         window.finishGameBtn = document.querySelector('.finish-game a.gem-button');
         
@@ -101,7 +101,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                             pointsIndicators[1].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
                         } else {
                             pointsIndicators[0].innerHTML = `${Number(pointsIndicators[0].innerText) + scoreObject}`;
-                            pointsIndicators[1].innerHTML = `${Number(pointsIndicators[1].innerText) + scoreObject}`;
+                            pointsIndicators[1].innerHTML = pointsIndicators[0].innerHTML;
                         }
                         
                         // live coins counter update
@@ -113,7 +113,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                             coinsIndicators[1].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
                         } else {
                             coinsIndicators[0].innerHTML = `${Number(coinsIndicators[0].innerText) + 200}`;
-                            coinsIndicators[1].innerHTML = `${Number(coinsIndicators[1].innerText) + 200}`;
+                            coinsIndicators[1].innerHTML = coinsIndicators[0].innerHTML;
                         }
                     }
                                         

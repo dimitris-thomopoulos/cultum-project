@@ -3,11 +3,11 @@
 }
 
 /*disable fullscreen*/
-.h5p-game-map .toolbar-buttons, .h5p-enable-fullscreen {
+.h5p-game-map .toolbar-buttons, .h5p-enable-fullscreen, .h5p-actions, iframe.h5p-iframe .h5p-actions {
     display: none !important;
 }
 
-.h5p-content > .h5p-container.h5p-standalone {
+.h5p-content > .h5p-container.h5p-standalone, .h5p-frame {
     border: none !important;
 }
 
