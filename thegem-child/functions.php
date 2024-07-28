@@ -235,12 +235,11 @@ function fetch_content_ids_by_tag($tag) {
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self"><i
-												style="transform:rotate(180deg)" class="gem-print-icon gem-icon-pack-material "></i>Previous Level</a></div>
+											target="_self"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Previous Level</a></div>
                                                             </div>
 							</div>
 						</div>
-                                                <div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-669464c90e6a37215"><div class="vc_column-inner thegem-custom-inner-669464c90e6a4 "><div class="wpb_wrapper thegem-custom-669464c90e6a37215"><style type="text/css">.thegem-button-669464c90e7414754 .gem-button svg {fill: #ffffff;}</style><div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main"><a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);" onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';" onmouseenter="this.style.backgroundColor='#f99b27';" href="https://cultum.gr/play/" target="_self"><i class="gem-print-icon gem-icon-pack-material "></i></a></div> </div></div></div>
+                                                <div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-669464c90e6a37215"><div class="vc_column-inner thegem-custom-inner-669464c90e6a4 "><div class="wpb_wrapper thegem-custom-669464c90e6a37215"><style type="text/css">.thegem-button-669464c90e7414754 .gem-button svg {fill: #ffffff;}</style><div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main"><a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);" onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';" onmouseenter="this.style.backgroundColor='#f99b27';" href="https://cultum.gr/play/" target="_self"><i class="fa fa-home"></i></a></div> </div></div></div>
 						<div class="wpb_column vc_column_container vc_col-xs-4 thegem-custom-6692ce1430f0c5924">
                                                     <div class="vc_column-inner thegem-custom-inner-6692ce1430f0d ">
 							<div class="wpb_wrapper thegem-custom-6692ce1430f0c5924">
@@ -256,8 +255,7 @@ function fetch_content_ids_by_tag($tag) {
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self">Next Level<i
-												class="gem-print-icon gem-icon-pack-material "></i></a></div>
+											target="_self">Next Level&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a></div>
                                                                         <div
 										class="gem-button-container gem-button-position-center thegem-button-6692ce1430fe78775 finish-game">
 										<a class="gem-button hidden gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-icon-position-right"
@@ -265,8 +263,7 @@ function fetch_content_ids_by_tag($tag) {
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self">Finish Game<i
-												class="gem-print-icon gem-icon-pack-material "></i></a></div>
+											target="_self"> Finish Game&nbsp;&nbsp;<i class="fa fa-solid fa-flag-checkered"></i></a></div>
 							</div>
                                                     </div>
 						</div>

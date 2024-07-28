@@ -47,7 +47,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             }
             
             // check if a game level is completed
-            if ( (event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) ) || (typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" &&  eventDefinition["interactionType"] !== "choice" ) || ((typeof scoreObject !== "undefined")) && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) {
+            if ( (event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) ) || (typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" &&  eventDefinition["interactionType"] !== "choice" && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ((typeof scoreObject !== "undefined")) && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) {
                 console.log('Completed event detected.');
                 window.isGameCompleted = `${slug}GameCompleted`;
                             
