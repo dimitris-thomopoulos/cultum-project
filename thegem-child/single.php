@@ -31,12 +31,36 @@ get_header(); ?>
                                                         
                                                         
                                                         if ( is_singular( 'thegem_pf_item' ) ) {
+                                                            
+                                                            // level title and description
+                                                            
+                                                            $package_plan = get_field('game-levels');
+                                                            $package_days_number = get_field('number-of-levels');
+                                                            $i = 1;
+                                                            
+                                                            foreach ($package_plan as $package_day) {
+                                                                if (!empty($package_day)) {
+                                                                    if( have_rows('game-levels') ): 
+                                                                        while( have_rows('game-levels') && ($i <= $package_days_number)): the_row();
+                                                                        
+                                                                        // Get sub field values.
+                                                                        $day_title = get_sub_field("level-{$i}-title");
+                                                                        $day_description = get_sub_field("level-{$i}-description");
+                                                                        echo '<div class="hidden-step level-info level-info-' . $i . '">' . '<h2>' . $day_title . '</h2>' . '<p>' . $day_description .'</p>' . '</div>';
+                                                                        
+                                                                        endwhile;
+                                                                    endif;
+                                                            
+                                                                $i++;
+                                                            }}
+                                                            
+                                                            //  dimitris - call function from functions.php to automatically generate game levels
                                                             global $post;
                                                             $post_slug = $post->post_name;
                                                             fetch_content_ids_by_tag($post_slug);
                                                             
-                                                            //  dimitris - call function from functions.php
                                                             //  print (new ReflectionFunction("gamipress_ajax_get_achievements"))->getFileName();
+                                                            
                                                         } else {
                                                             // dimitris - disable default content of single portfolio page template (disable WP bakery)    
                                                             echo do_shortcode($template->post_content);

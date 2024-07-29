@@ -98,10 +98,10 @@ if (baseUrl == 'https://cultum.gr/capital') {
                             let newPoints = `${Number(pointsIndicators[0].innerText.replace('.', '')) + scoreObject}`;
                             
                             pointsIndicators[0].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
-                            pointsIndicators[1].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
+//                            pointsIndicators[1].innerHTML = newPoints.slice(0, thousandSeparatorIndex) + '.' + newPoints.slice(thousandSeparatorIndex, newPoints.length);
                         } else {
                             pointsIndicators[0].innerHTML = `${Number(pointsIndicators[0].innerText) + scoreObject}`;
-                            pointsIndicators[1].innerHTML = pointsIndicators[0].innerHTML;
+//                            pointsIndicators[1].innerHTML = pointsIndicators[0].innerHTML;
                         }
                         
                         // live coins counter update
@@ -110,10 +110,10 @@ if (baseUrl == 'https://cultum.gr/capital') {
                             let newCoins = `${Number(coinsIndicators[0].innerText.replace('.', '')) + 200}`;
                             
                             coinsIndicators[0].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
-                            coinsIndicators[1].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
+//                            coinsIndicators[1].innerHTML = newCoins.slice(0, thousandSeparatorIndex) + '.' + newCoins.slice(thousandSeparatorIndex, newCoins.length);
                         } else {
                             coinsIndicators[0].innerHTML = `${Number(coinsIndicators[0].innerText) + 200}`;
-                            coinsIndicators[1].innerHTML = coinsIndicators[0].innerHTML;
+//                            coinsIndicators[1].innerHTML = coinsIndicators[0].innerHTML;
                         }
                     }
                                         
