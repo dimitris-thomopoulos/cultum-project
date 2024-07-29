@@ -5,7 +5,7 @@ var baseUrl = pageUrl.substring(0, 25);
 
 if (baseUrl == 'https://cultum.gr/capital') {
     
-    var slug = document.querySelector('meta[name="page-slug"]').getAttribute('content');
+    window.slug = document.querySelector('meta[name="page-slug"]').getAttribute('content');
     
     if (window.location.hash) {
         var url = window.location.href.split('#')[0];
@@ -24,7 +24,6 @@ if (baseUrl == 'https://cultum.gr/capital') {
         window.nextLevelBtn = document.querySelector('.next-game a.gem-button');
         window.prevLevelBtn = document.querySelector('.prev-game a.gem-button');
         
-        window.levelInfos = [...document.querySelectorAll('.level-info')];
         window.gameSteps = [...document.querySelectorAll('.game-step')];
         window.gameLevels = [];
         
@@ -53,7 +52,6 @@ if (baseUrl == 'https://cultum.gr/capital') {
             // Show the new current level the player chose to play
            
             window.gameLevels[window.currentStep - 1].classList.remove('hidden-step');
-            window.levelInfos[window.currentStep - 1].classList.remove('hidden-step');
             
             // smooth scroll to top of current game, if player has completed at least the first level. Add a bit of delay to allow time for the iframe games to load on the DOM.
             // WARNING - do NOT change the "nearest" option for block attribute, otherwise the page height will break
@@ -113,7 +111,6 @@ if (baseUrl == 'https://cultum.gr/capital') {
         
             //  Hide the level from which the player is leaving
             window.gameLevels[window.currentStep].classList.add('hidden-step');
-            window.levelInfos[window.currentStep].classList.add('hidden-step');
             
             console.log('the current step is:', window.currentStep);
             
@@ -129,8 +126,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
         
             // Show the new current step and hide the old one
             window.gameLevels[window.currentStep - 2].classList.add('hidden-step');
-            window.levelInfos[window.currentStep - 2].classList.add('hidden-step');
-            
+
             console.log('the current step is:', window.currentStep);  
             
             multiStepLogic();
@@ -138,7 +134,6 @@ if (baseUrl == 'https://cultum.gr/capital') {
         
         // Display the current level once, on first page load of the game page
         window.gameLevels[window.currentStep - 1].classList.remove('hidden-step');
-        window.levelInfos[window.currentStep - 1].classList.add('hidden-step');
         
         // Attach event listeners once
         window.prevLevelBtn.addEventListener('click', handlePrevClick);
