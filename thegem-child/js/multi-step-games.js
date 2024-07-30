@@ -17,6 +17,12 @@ if (baseUrl == 'https://cultum.gr/capital') {
         
         var stepsNav = document.querySelector('.steps-nav');
         window.blockContentContainer = document.querySelector('.block-content');
+        window.pageTitle = document.getElementById('page-title');
+        
+        var screenX = window.matchMedia("(max-width: 991px)");
+        
+        let gamePreloader = document.querySelector('.game-preloader');
+        gamePreloader.classList.add('hidden-step');
         
         console.log('loaded!');
         console.log(window.slug);
@@ -56,9 +62,18 @@ if (baseUrl == 'https://cultum.gr/capital') {
             // smooth scroll to top of current game, if player has completed at least the first level. Add a bit of delay to allow time for the iframe games to load on the DOM.
             // WARNING - do NOT change the "nearest" option for block attribute, otherwise the page height will break
             if (localStorage.getItem(`${slug}GameNo-1-Completed`)) {
-                setTimeout(() => {
-                    window.blockContentContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                }, 250)
+                
+                // check if device viewport width is smaller than 991 pixels (tablet & mobile)
+                if (screenX.matches) {
+                    setTimeout(() => {
+                        window.pageTitle.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                    }, 500)
+                } else {                
+                   setTimeout(() => {
+                       window.blockContentContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                   }, 500)
+                }
+                
             }
             
             switch (true) {

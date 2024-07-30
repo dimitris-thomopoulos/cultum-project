@@ -34,6 +34,8 @@ get_header(); ?>
                                                          
                                                             // level title and description
                                                             
+                                                            echo '<div class="game-preloader"><h2>Loading...</h2></div>';
+                                                            
                                                             $game_levels = get_field('game-levels');
                                                             $game_levels_number = get_field('number-of-levels');
                                                             $i = 1;
