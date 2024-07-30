@@ -3,12 +3,13 @@
 }
 
 /*disable fullscreen*/
-.h5p-game-map .toolbar-buttons, .h5p-enable-fullscreen, .h5p-actions, iframe.h5p-iframe .h5p-actions {
-    /*display: none !important;*/
+.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish {
+    display: none !important;
 }
 
+/* disable fullscreen functionality for desktop devices for jigsaw puzzle and virtual tours, as they don't work properly */
 @media (min-width: 991px) {
-    .h5p-jigsaw-puzzle-title-bar {
+    .h5p-jigsaw-puzzle-title-bar, .h5p-enable-fullscreen {
         display: none !important;
     }
 }

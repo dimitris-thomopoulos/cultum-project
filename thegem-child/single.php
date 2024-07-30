@@ -17,6 +17,9 @@ get_header(); ?>
 
                         echo thegem_page_title(); ?>
 			<div class="block-content">
+                                
+                                <canvas id="confetti-canvas"></canvas>
+                                
 				<div class="container">
 					<div class="thegem-template-wrapper thegem-template-portfolio thegem-template-<?php echo esc_attr($thegem_protfolio_template_id); ?>">
 						<?php
@@ -44,11 +47,7 @@ get_header(); ?>
                                                                 if (!empty($game_level)) {
                                                                     if( have_rows('game-levels') ): 
                                                                         
-                                                                        while( have_rows('game-levels') && ($i <= $game_levels_number)): the_row();
-                                                                        
-//                                                                        the_sub_field("game");
-                                                                        
-//                                                                        echo do_shortcode('[acf field="game"]');
+                                                                        while( have_rows('game-levels') && ($i <= $game_levels_number)): the_row();                                                                        
                                                                     
                                                                         // Get sub field values.
                                                                         $level_title = get_sub_field("level-{$i}-title");
@@ -148,7 +147,6 @@ get_header(); ?>
 					</div>
 				</div><!-- .container -->
 			</div><!-- .block-content -->
-                        <canvas id="confetti-canvas"></canvas>
                         <?php
                    
 	endwhile;
