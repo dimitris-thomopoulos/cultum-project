@@ -3,7 +3,7 @@
 }
 
 /*disable fullscreen*/
-.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish {
+.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2) {
     display: none !important;
 }
 

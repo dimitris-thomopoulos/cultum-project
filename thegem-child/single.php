@@ -80,7 +80,7 @@ get_header(); ?>
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Previous Level</a></div>
+                                                                                        target="_self"><i class="fa fa-chevron-left"></i><span>&nbsp;&nbsp;Previous Level</span></a></div>
                                 </div>
 							</div>
 						</div>
@@ -122,7 +122,7 @@ get_header(); ?>
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self">Next Level&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a>
+											target="_self"><span>Next Level&nbsp;&nbsp;</span><i class="fa fa-chevron-right"></i></a>
                                     </div>
                                     <div class="gem-button-container gem-button-position-center thegem-button-6692ce1430fe78775 finish-game">
 									    <a class="gem-button hidden gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-icon-position-right"
@@ -130,7 +130,7 @@ get_header(); ?>
 											style="border-radius: 3px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);"
 											onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';"
 											onmouseenter="this.style.backgroundColor='#f99b27';" href=""
-											target="_self"> Finish Game&nbsp;&nbsp;<i class="fa fa-solid fa-flag-checkered"></i></a>
+                                                                                        target="_self"><span>Finish Game&nbsp;&nbsp;</span><i class="fa fa-solid fa-flag-checkered"></i></a>
                                     </div>
 							    </div>
                             </div>
