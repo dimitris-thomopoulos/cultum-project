@@ -3,15 +3,23 @@
 }
 
 /*disable fullscreen*/
-.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2) {
+.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2), .h5p-results-answer span ~ span, .sequencing-status {
     display: none !important;
 }
 
 /* disable fullscreen functionality for desktop devices for jigsaw puzzle and virtual tours, as they don't work properly */
 @media (min-width: 991px) {
-    .h5p-jigsaw-puzzle-title-bar, .h5p-enable-fullscreen {
+    .h5p-jigsaw-puzzle-title-bar, .h5p-enable-fullscreen, .toolbar-button-fullscreen {
         display: none !important;
     }
+}
+
+.media-screen .media-screen-bar {
+    background-color: transparent !important;
+}
+
+.media-screen .media-screen-medium.h5p-image > img {
+    box-shadow: none !important;
 }
 
 .h5p-content > .h5p-container.h5p-standalone, .h5p-frame {

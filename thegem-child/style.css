@@ -7,53 +7,7 @@ body *::selection {
 	color: white !important;
 }
 
-@media (max-width: 560px) {
-	#wpadminbar {
-		display: none !important;
-	}
-}
-
-/* MAIN GAME PAGE STYLES */
-
-.page-id-24452 .gamipress-share-buttons-label, .page-id-24452 .gamipress-share-buttons {
-	display: none !important;
-}
-
 /* STEP GAMES STYLES */
-
-@media (max-width: 580px) {
-	.steps-nav .gem-button span {
-		display: none !important;
-	}
-}
-
-.game-preloader, .game-preloader h2 {
-	text-align: center;
-}
-
-html:has( .single-thegem_pf_item) {
-	margin: 0 !important;
-}
-
-.level-description + p, .level-title {
-	text-align: center;
-}
-
-.gamipress-user-points:not(.gamipress-layout-none) {
-	margin-bottom: 0 !important;
-}
-
-.single-thegem_pf_item .scroll-top-button, .single-thegem_pf_item #pojo-a11y-toolbar, .cky-btn-revisit-wrapper {
-	display: none !important;
-}
-
-.steps-nav .gamipress-points {
-	padding: 0 !important;
-}
-
-.steps-nav .gamipress-user-points-exploration-points {
-	margin-top: 8px;
-}
 
 .steps-nav.nav-focus {
 	position: fixed !important;
@@ -65,16 +19,16 @@ html:has( .single-thegem_pf_item) {
   max-width: none;
 }
 
-.wpb_row.game-step, .game-step .wpb_content_element {
-	margin-bottom: 0 !important;
+@media (max-width: 680px) {
+	
+.steps-nav.nav-focus .gem-button-container.next-game {
+	float: right;
 }
 
-.game-step .h5p-question-content {
-	margin: 0 !important;
+.steps-nav.nav-focus .gem-button-container.prev-game {
+	float: left;
 }
 
-.steps-nav .prev-game a.gem-button i, .steps-nav .next-game a.gem-button i, .steps-nav .finish-game a.gem-button i {
-	vertical-align: middle;
 }
 
 .game-area-wrapper:has( .nav-focus) {
@@ -132,7 +86,7 @@ html:has( .single-thegem_pf_item) {
     cursor: not-allowed;
 }
 
-.prev-game a.hidden, .next-game a.hidden, .finish-game a.hidden {
+.prev-game a.hidden, .next-game a.hidden {
 	display: none !important;
 }
 
@@ -146,8 +100,6 @@ html:has( .single-thegem_pf_item) {
 	pointer-events: none !important;
 	touch-action: none !important;
 	opacity: 0 !important;
-	top: 0;
-	height: 0;
 }
 
 
@@ -156,18 +108,15 @@ html:has( .single-thegem_pf_item) {
 
 /* CONFETTI EFFECT STYLES START */
   
-#confetti-canvas {
+  #confetti-canvas {
 		z-index: -1;
-		position: absolute;
-		left: 0 !important;
+		position: fixed;
 		top: 0 !important;
     overflow-y: hidden;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-		max-height: 100% !important;
-		height: 100% !important;
-}
+  }
 
 #confetti-canvas.visible {
 		z-index: 5;

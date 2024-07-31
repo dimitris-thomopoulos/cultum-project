@@ -9,10 +9,10 @@ if (baseUrl == 'https://cultum.gr/capital') {
     $(document).ready(function () {
         
         let i=1;
-         
+        
         var stepsNav = document.querySelector('.steps-nav');
-        var pointsIndicators = [...document.querySelectorAll('.gamipress-points:nth-of-type(2) .gamipress-user-points-amount')];
-        var coinsIndicators = [...document.querySelectorAll('.gamipress-points:nth-of-type(1) .gamipress-user-points-amount')];
+        var pointsIndicators = [...document.querySelectorAll('.gamipress-inline-points-exploration-points-amount')];
+        var coinsIndicators = [...document.querySelectorAll('.gamipress-inline-points-coins-amount')];
         
         window.finishGameBtn = document.querySelector('.finish-game a.gem-button');
         
@@ -46,11 +46,19 @@ if (baseUrl == 'https://cultum.gr/capital') {
                 var eventResult= {};
             }
             
+            if ( (typeof event.data.statement.context.contextActivities.category !== "undefined") && event.data.statement.context.contextActivities.category[0]["id"].includes('SingleChoiceSet') && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] !== "undefined")  ) {
+                window.isVirtualTour = true;
+            } else {
+                window.isVirtualTour = false;
+            }
+            
             // check if a game level is completed
-            if ( (event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) ) || (typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" &&  eventDefinition["interactionType"] !== "choice" && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ((typeof scoreObject !== "undefined")) && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) {
+            if ( ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (window.isVirtualTour) ) || ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" && eventDefinition["interactionType"] !== "choice" && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) ) {
+                
+                
                 console.log('Completed event detected.');
                 window.isGameCompleted = `${slug}GameCompleted`;
-                            
+                           
                 //  show the "Finish Game" button if the level which the user just completed is the final level
                 if (window.currentStep === window.gameSteps.length) {
                     
@@ -84,7 +92,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                 //  if not already completed the specific game, update statically the points and coins of the player in the UI and pop the confetti
                 if (localStorage.getItem(`${slug}GameNo-${window.currentStep}-Completed`) !== 'true') {
                     
-//                    window.isGameCompleted = `${slug}GameNo-${window.currentStep}-Completed`;
+//                  window.isGameCompleted = `${slug}GameNo-${window.currentStep}-Completed`;
                     
                     // locally store data that the specific game is now completed by the player
                     localStorage.setItem(`${slug}GameNo-${window.currentStep}-Completed`, 'true');
@@ -105,7 +113,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                         }
                         
                         // live coins counter update
-                        if (Number(coinsIndicators[0].innerText.replace('.', '')) >= 1000) {
+                        if (Number(coinsIndicators[0].innerText.replace('.', '') ) >= 1000) {
                             let thousandSeparatorIndex = coinsIndicators[0].innerText.indexOf('.');
                             let newCoins = `${Number(coinsIndicators[0].innerText.replace('.', '')) + 200}`;
                             
@@ -133,7 +141,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                 
                 i++;
             }
-            
+        
         });
     });
 

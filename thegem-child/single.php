@@ -37,7 +37,7 @@ get_header(); ?>
                                                          
                                                             // level title and description
                                                             
-                                                            echo '<div class="game-preloader"><h2>Loading...</h2></div>';
+                                                            echo '<div class="game-preloader"><img width="250" src="https://cultum.gr/wp-content/uploads/2024/07/800x600-cecae62ec79ddc1d9d95c3131510f3e6-ezgif.com-resize.gif"><h2 style="margin-top: -50px;">Loading...</h2></div>';
                                                             
                                                             $game_levels = get_field('game-levels');
                                                             $game_levels_number = get_field('number-of-levels');
@@ -52,7 +52,13 @@ get_header(); ?>
                                                                         // Get sub field values.
                                                                         $level_title = get_sub_field("level-{$i}-title");
                                                                         $level_description = get_sub_field("level-{$i}-description");
-                                                                        echo '<div id="'. strtolower(get_the_title()) .'-game-' . $i . '" class="game-step hidden-step level-info-' . $i . '">' . '<h2 class="level-title">' . $level_title . '</h2>' . '<p class="level-description">' . $level_description .'</p>' . '</div>';
+                                                                        echo '<div id="'. strtolower(get_the_title()) .'-game-' . $i . '" class="game-step hidden-step level-info-' . $i . '">' 
+                                                                                . '<h2 class="level-title">' . $level_title . '</h2>' .                                                                                
+                                                                                '   <div class="wpb_wrapper player-points">' 
+                                                                                . do_shortcode('[gamipress_user_points type="all" thumbnail="yes" thumbnail_size="35" label="no" current_user="yes" inline="yes" columns="2" columns_small="1" layout="left" align="left" wpms="no"]') 
+                                                                                . ' </div>
+                                                                                    
+                                                                                <div class="level-description">' . $level_description .'</div>' . '</div>';
                                                                         
                                                                         endwhile;
                                                                     endif;
@@ -89,7 +95,7 @@ get_header(); ?>
                                                 <div class="vc_column-inner thegem-custom-inner-669464c90e6a4 ">
                                                     <div class="wpb_wrapper thegem-custom-669464c90e6a37215"><style type="text/css">.thegem-button-669464c90e7414754 .gem-button svg {fill: #ffffff;}</style>
                                                         <div class="vc_row wpb_row vc_inner vc_row-fluid thegem-custom-66a78b133ab4c4421 custom-inner-column-66a78b133ab50" style="display: flex; algin-items: center;">
-                                                            <div class="wpb_column vc_column_container vc_col-sm-6 thegem-custom-66a78b133ac082552"> 
+                                                            <div class="wpb_column vc_column_container vc_col-sm-12 thegem-custom-66a78b133ac082552"> 
                                                                 <div class="vc_column-inner thegem-custom-inner-66a78b133ac09">
                                                                     <div class="wpb_wrapper thegem-custom-66a78b133ac082552">
                                                                         <div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main">
@@ -97,13 +103,7 @@ get_header(); ?>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-
-                                                            <div class="wpb_column vc_column_container vc_col-sm-6 thegem-custom-66a78b133ad622327">
-                                                                <div class="vc_column-inner thegem-custom-inner-66a78b133ad63" style="height: 100%; display: flex; align-items: center;     ">
-                                                                    <div class="wpb_wrapper thegem-custom-66a78b133ad622327"><?php echo do_shortcode('[gamipress_user_points type="all" thumbnail="yes" thumbnail_size="35" label="no" current_user="yes" inline="no" columns="1" columns_small="1" layout="left" align="left" wpms="no"]'); ?></div>
-                                                                </div>
-                                                            </div>
+                                                            </div>                                                                
                                                         </div>
                                                     </div>
                                                 </div>
