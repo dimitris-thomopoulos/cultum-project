@@ -1,17 +1,64 @@
 .h5p-game-map p, .h5p-game-map span {
-    color: green !important;
+    /*color: green !important;*/
 }
 
 /*disable fullscreen*/
-.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2), .h5p-results-answer span ~ span, .sequencing-status {
+.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2), .h5p-results-answer span ~ span, .sequencing-status, .status-container-stages {
     display: none !important;
 }
+
+.h5p-game-map-toolbar-tool-bar .toolbar-headline {
+    white-space: wrap !important;
+    text-align: center;
+}
+
+/*JIGSAW PUZZLE STYLES*/
 
 /* disable fullscreen functionality for desktop devices for jigsaw puzzle and virtual tours, as they don't work properly */
 @media (min-width: 991px) {
     .h5p-jigsaw-puzzle-title-bar, .h5p-enable-fullscreen, .toolbar-button-fullscreen {
         display: none !important;
     }
+}
+
+/*FIND MULTIPLE HOTSPOTS STYLES*/
+
+.h5p-container.h5p-image-hotspot-question {
+    text-align: center;
+}
+
+.h5p-container.h5p-image-hotspot-question .h5p-question-feedback {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.898);
+    padding: 20px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    max-width: none;
+    width: auto;
+    display: flex;
+    margin: 0px !important;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 5px solid white;
+}
+
+.h5p-container.h5p-image-hotspot-question .h5p-question-feedback .h5p-question-feedback-content {
+    margin-bottom: 0 !important;
+}
+
+/*MEMORY GAME STYLES*/
+
+.h5p-memory-game .h5p-memory-card .h5p-front {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.h5p-game-map-stage-label-container .h5p-game-map-stage-label .h5p-game-map-stage-label-inner {
+    -webkit-line-clamp: initial !important;
 }
 
 .media-screen .media-screen-bar {
@@ -32,7 +79,7 @@
 }
 
 .h5p-combination-lock-case {
-	background: linear-gradient(#ea4747, #773232) !important;
+	background: linear-gradient(#a16200, #53250e) !important;
 	border-radius: .5rem;
 	box-shadow: inset 0 -0.5rem .25rem -0.25rem #a18282,0 2px 3px 1px rgba(0,0,0,.5);
 	display: flex;
@@ -41,5 +88,5 @@
 }
 
 .h5p-combination-lock-case .h5p-combination-lock-elements {
-    background: linear-gradient(#9d4444, #3f2b2b) !important;
+    background: linear-gradient(#744f35, #2e180d) !important;
 }
