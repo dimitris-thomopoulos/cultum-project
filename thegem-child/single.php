@@ -37,7 +37,7 @@ get_header(); ?>
                                                          
                                                             // level title and description
                                                             
-                                                            echo '<div class="game-preloader"><img width="250" src="https://cultum.gr/wp-content/uploads/2024/07/800x600-cecae62ec79ddc1d9d95c3131510f3e6-ezgif.com-resize.gif"><h2 style="margin-top: -50px;">Loading...</h2></div>';
+                                                            echo '<div class="game-preloader"><img width="250" src="https://cultum.gr/wp-content/uploads/2024/07/800x600-cecae62ec79ddc1d9d95c3131510f3e6-ezgif.com-resize.gif"><h3 style="margin-top: -50px;">Loading...</h3></div>';
                                                             
                                                             $game_levels = get_field('game-levels');
                                                             $game_levels_number = get_field('number-of-levels');
@@ -100,6 +100,7 @@ get_header(); ?>
                                                                     <div class="wpb_wrapper thegem-custom-66a78b133ac082552">
                                                                         <div class="gem-button-container gem-button-position-center thegem-button-669464c90e7414754 back-to-main">
                                                                             <a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: rgb(30, 115, 190); color: rgb(255, 255, 255);" onmouseleave="this.style.backgroundColor='#1e73be';this.style.color='#ffffff';" onmouseenter="this.style.backgroundColor='#f99b27';" href="https://cultum.gr/play/" target="_self"><i class="fa fa-home"></i></a>
+                                                                            <a class="gem-button gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: transparent; color: rgb(30, 115, 190);" onmouseleave="this.style.backgroundColor='transparent';this.style.transform='rotate(-90deg)';" onmouseenter="this.style.transform='rotate(90deg)';" href="" target="_self"><i class="fa fa-refresh"></i></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

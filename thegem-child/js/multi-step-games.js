@@ -30,6 +30,8 @@ if (baseUrl == 'https://cultum.gr/capital') {
         window.nextLevelBtn = document.querySelector('.next-game a.gem-button');
         window.prevLevelBtn = document.querySelector('.prev-game a.gem-button');
         
+        window.finishGameBtn = document.querySelector('.finish-game a.gem-button');
+        
         window.gameSteps = [...document.querySelectorAll('.game-step')];
         window.gameLevels = [];
         
@@ -53,6 +55,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             }
         }
         
+        
         function multiStepLogic() {
             
             // Show the new current level the player chose to play
@@ -64,7 +67,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             if (localStorage.getItem(`${slug}GameNo-1-Completed`)) {
                 setTimeout(() => {
                        window.blockContentContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                }, 500)
+                }, 500);
             }
             
             switch (true) {
@@ -79,7 +82,12 @@ if (baseUrl == 'https://cultum.gr/capital') {
                         window.nextLevelBtn.classList.remove('hidden');
                     }
                     
+                    if ( !(window.finishGameBtn.classList.contains('hidden')) ) {
+                        window.finishGameBtn.classList.add('hidden');
+                    }
+                    
                     break;
+                    
                 // toggle the hiding of the "previous level" and "next level" buttons in the levels in between
                 case ((window.currentStep > 1) && (window.currentStep < window.gameSteps.length)):
                     
@@ -94,7 +102,12 @@ if (baseUrl == 'https://cultum.gr/capital') {
                         window.nextLevelBtn.classList.add('disabled');
                     }
                     
+                    if ( !(window.finishGameBtn.classList.contains('hidden')) ) {
+                        window.finishGameBtn.classList.add('hidden');
+                    }
+                    
                     break;
+                    
                 case (window.currentStep == gameSteps.length):
                     
                     window.prevLevelBtn.classList.remove('hidden');
@@ -103,6 +116,11 @@ if (baseUrl == 'https://cultum.gr/capital') {
                     if (!(window.nextLevelBtn.classList.contains('hidden')) ){
                         window.nextLevelBtn.classList.add('hidden');
                     }
+                    
+                    if ( (window.finishGameBtn.classList.contains('hidden')) && !localStorage.getItem(window.isFinishClicked) && localStorage.getItem(window.isGameCompleted) ) {
+                        window.finishGameBtn.classList.remove('hidden');
+                    }
+                    
                     break;
             }   
         }

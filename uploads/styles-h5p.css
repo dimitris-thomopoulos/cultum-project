@@ -21,7 +21,49 @@
     }
 }
 
+/*INTERACTIVE VIDEO STYLES*/
+
+.h5p-interactive-video .h5p-interaction.h5p-poster .h5p-interaction-outer, .h5p-interactive-video .h5p-dialog, .h5p-memory-game .h5p-memory-pop, .h5p-memory-game .h5p-memory-top {
+    border-radius: 20px !important;
+}
+
+.h5p-interactive-video .h5p-controls {
+    background: #023f75 !important;
+}
+
+.h5p-interactive-video .h5p-splash {
+    border-radius: 40px !important;
+    background: #1e73bed4 !important;
+    backdrop-filter: blur(6px) !important;
+}
+
+.h5p-interactive-video .h5p-buffered {
+    background: #166db9 !important;
+}
+
+.h5p-interactive-video .h5p-interaction.h5p-poster {
+    border-radius: 20px !important;
+}
+
+.h5p-interactive-video-bubble-endscreen-inner {
+    background: #023f75d9 !important;
+    backdrop-filter: blur(6px);
+    border-radius: 20px !important;
+}
+
 /*FIND MULTIPLE HOTSPOTS STYLES*/
+
+.hotspot-image {
+    border-radius: 25px !important;
+}
+
+.h5p-image-hotspot-question .hotspot-feedback::before {
+    left: 0 !important;
+}
+
+.h5p-image-hotspot-question .h5p-question-scorebar.h5p-question-visible {
+    margin-top: 20px;
+}
 
 .h5p-container.h5p-image-hotspot-question {
     text-align: center;
@@ -36,8 +78,10 @@
     padding: 20px 30px;
     border-radius: 50px;
     font-size: 18px;
-    max-width: none;
-    width: auto;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+    width: auto !important;
     display: flex;
     margin: 0px !important;
     align-items: center;
@@ -48,6 +92,72 @@
 
 .h5p-container.h5p-image-hotspot-question .h5p-question-feedback .h5p-question-feedback-content {
     margin-bottom: 0 !important;
+}
+
+/*TAROT FLASHCARDS STYLES*/
+
+.h5p-flashcards {
+    border-radius: 30px !important;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button {
+    color: #fcd400 !important;
+    border-color: #ffd700 !important;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button:hover {
+    background-color: white !important;
+    color: #2a64e8 !important;
+}
+
+.h5p-flashcards .h5p-visual-progress {
+    background-color: #ffd7005e !important;
+    border-color: #ffd700 !important;
+}
+
+.h5p-flashcards .h5p-visual-progress div {
+    background-color: #ffd700 !important;
+}
+
+.h5p-show-results .h5p-show-results-icon::before {
+    color: #ffd700 !important;
+}
+
+.h5p-card.h5p-previous, .h5p-card.h5p-next {
+    opacity: 0.5;
+    filter: saturate(0);
+}
+
+.h5p-flashcard-overlay, .h5p-solution {
+    display: none !important;
+}
+
+.h5p-flashcards .h5p-foot {
+    border-radius: 2em !important;
+}
+
+.h5p-flashcards .h5p-card.h5p-current .h5p-cardholder {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.h5p-flashcards .h5p-imageholder {
+    background-color: transparent !important;
+}
+
+.h5p-flashcards.h5p-standalone {
+	background: linear-gradient(45deg, #432411, #71573b);
+}
+
+.h5p-flashcards .h5p-description, .h5p-flashcards .h5p-results-list-item, .h5p-flashcards .h5p-results-retry-button {
+    border-color: #fbfbfb !important;
+    color: #fbfbfb !important;
+}
+
+.h5p-flashcards .h5p-results-retry-button:hover {
+    background-color: #fbfbfb !important;
+    color: #3c465d !important;
 }
 
 /*MEMORY GAME STYLES*/
@@ -74,19 +184,62 @@
 }
 
 .h5p-game-map .h5p-game-map-toolbar-tool-bar {
-    background-color: wheat !important;
+    background-color: #3773ae !important;
     border-radius: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 90, 220, 0.7) !important;
+    margin-bottom: 20px !important;
+}
+
+.h5p-game-map .h5p-game-map-toolbar-tool-bar .toolbar-headline {
+    color: white !important;
+}
+
+.h5p-game-map .status-container .status-container-values span.value, .h5p-game-map .status-container .status-container-values span.max-value, .h5p-game-map .h5p-game-map-toolbar-tool-bar {
+    color: #ffbf00 !important;
+}
+
+.h5p-game-map .status-container.status-container-score::before {
+    color: #ffdf33 !important;
+}
+
+.h5p-game-map-toolbar-tool-bar .toolbar-buttons .toolbar-button.toolbar-button-fullscreen.toolbar-button-enter-fullscreen::before, .h5p-game-map-toolbar-tool-bar .toolbar-buttons .toolbar-button.toolbar-button-audio::before {
+    color: #ffd42b;
+}
+
+.h5p-game-map .toolbar-button {
+    border-color: #ffd42b !important;
+}
+
+.h5p-game-map-exercise .h5p-game-map-exercise-content-container .h5p-game-map-exercise-content {
+    border-radius: 1rem !important;
+}
+
+.h5p-game-map-background-image, .h5p-game-map-exercise {
+    border-radius: 20px;
 }
 
 .h5p-combination-lock-case {
-	background: linear-gradient(#a16200, #53250e) !important;
-	border-radius: .5rem;
-	box-shadow: inset 0 -0.5rem .25rem -0.25rem #a18282,0 2px 3px 1px rgba(0,0,0,.5);
-	display: flex;
-	margin-bottom: .25rem;
-	padding: 1rem;
+    background: linear-gradient(#a16200, #53250e) !important;
+    border-radius: .5rem;
+    box-shadow: inset 0 -0.5rem .25rem -0.25rem #a18282,0 2px 3px 1px rgba(0,0,0,.5);
+    display: flex;
+    margin-bottom: .25rem;
+    padding: 1rem;
 }
 
 .h5p-combination-lock-case .h5p-combination-lock-elements {
     background: linear-gradient(#744f35, #2e180d) !important;
+}
+
+/*DRAG N DROP GAME*/
+
+.h5p-dragquestion .h5p-inner {
+    background-size: cover !important;
+    background-position: center bottom !important;
+}
+
+.h5p-dragquestion .h5p-draggable {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
