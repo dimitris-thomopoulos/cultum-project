@@ -21,6 +21,7 @@ get_header(); ?>
                                 <canvas id="confetti-canvas"></canvas>
                                 
 				<div class="container">
+                                    <a class="gem-button exit-inner-game gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-empty" data-ll-effect="drop-right-without-wrap" style="border-radius: 250px; background-color: transparent; color: rgb(30, 115, 190); font-size: " onmouseleave="this.style.transform='translateX(5px)';" onmouseenter="this.style.transform='translateX(0)';" href="https://cultum.gr/play/" target="_self"><i class="fa fa-arrow-left"></i></a>
 					<div class="thegem-template-wrapper thegem-template-portfolio thegem-template-<?php echo esc_attr($thegem_protfolio_template_id); ?>">
 						<?php
 							$template_custom_css = get_post_meta($thegem_protfolio_template_id, '_wpb_shortcodes_custom_css', true) . get_post_meta($thegem_protfolio_template_id, '_wpb_post_custom_css', true);

@@ -1,7 +1,8 @@
 let W = window.innerWidth;
 let H = window.innerHeight;
 const canvas = document.getElementById("confetti-canvas");
-const context = canvas.getContext("2d");
+if (!(canvas === null)) {
+    const context = canvas.getContext("2d");
 const maxConfettis = 150;
 const particles = [];
 
@@ -144,4 +145,5 @@ setTimeout(() => {
     canvas.classList.remove('visible');
   }, 1000);
 }, 3000);   
+}
 }

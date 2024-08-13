@@ -76,9 +76,9 @@ if (!isset($portfolio_item_size)) { ?>
                                                 $has_earned = gamipress_has_user_earned_achievement($achievement_id, $user_id);
                                                                                             
                                                 if ($has_earned) {
-                                                    $completion_label = 'COMPLETED!'; 
+                                                    $completion_label = '<span class="completed-label"><i class="fa fa-check-circle"></i>COMPLETED</span>'; 
                                                 } else {
-                                                    $completion_label = 'NOT COMPLETED';
+                                                    $completion_label = '';
                                                 }
                                                 
                                                 echo $completion_label;
@@ -86,10 +86,11 @@ if (!isset($portfolio_item_size)) { ?>
                                                 if (get_field('coming-soon'))  {
                                                     $status_label = 'DISABLED';
                                                 ?>
-                                                <div class="coming-soon">COMING SOON</div>
-                                                <?php }
-                                            ?> 
-                                          <!--<div class="completion-label"></div>-->
+                                                <span class="coming-soon"><i class="fa fa-clock-o"></i>COMING SOON</span>
+                                                <?php 
+                                                }
+                                                ?>
+                                                
 						<?php if ($is_video_type) {
 							switch ($thegem_portfolio_item_data['grid_appearance_video_type']) {
 								case 'youtube':
@@ -556,12 +557,12 @@ if (!isset($portfolio_item_size)) { ?>
                                                                     
 								<?php
                                                                 }?>
-                                                                    <div class="points-to-be-rewarded">Reward: <span><?php echo get_field('exploration-points-reward'); ?> points</span></div>
+                                                                    <div class="points-to-be-rewarded">Reward: <span><?php echo get_field('exploration-points-reward'); ?> <img width="25" height="43" style="object-fit: contain" src="https://cultum.gr/wp-content/uploads/2024/06/exploration-point-icon.png" alt=""></span></div>
                                                                     <?php
                                                                 
                                                                 if (get_field('difficulty') != '') { ?>                                                                
                                                                     
-                                                                    <div class="difficulty">Difficulty: <span style="text-transform: uppercase;" ><?php echo get_field('difficulty'); ?></span></div>
+                                                                    <div class="difficulty <?php echo strtolower(get_field('difficulty')); ?>">Difficulty: <span style="text-transform: uppercase;" ><?php echo get_field('difficulty'); ?></span></div>
                                                                     
                                                                 <?php
                                                                 thegem_get_additional_meta($params, false, ', ', true); 
@@ -603,7 +604,7 @@ if (!isset($portfolio_item_size)) { ?>
                                                     $is_already_unlocked = 1;
                                                 } elseif ($is_capital_set != '' && ($user_points < $is_capital_set)){
                                                     $is_already_unlocked = 0;
-                                                    echo '<div class="locked-label locked-capital"></div>' ;
+                                                    echo '<div class="locked-label locked-capital"><i class="fa-solid fa-lock"></i>LOCKED</div>' ;
                                                 }
                                                 
                                                 ?>

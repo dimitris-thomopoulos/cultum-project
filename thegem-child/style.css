@@ -7,7 +7,407 @@ body *::selection {
 	color: white !important;
 }
 
+.text-center {
+	text-align: center !important;
+}
+
+@media (max-width: 560px) {
+	#wpadminbar {
+		display: none !important;
+	}
+}
+
+.exit-inner-game {
+	position: absolute;
+	padding-top: 15px !important;
+}
+
+@media (max-width: 800px) {
+	.exit-inner-game {
+		display: none;
+	}
+}
+
+.header-sticky-template .thegem-template-header .vc_row {
+	padding: 0 !important;
+}
+
+.text-center .gamipress-inline-points-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.text-center .gamipress-inline-points-exploration-points {
+	margin-top: 15px;
+	font-size: 18px;
+	color: #1e73be;
+	font-weight: 600;
+}
+
+@media (max-width: 530px) {
+	.steps-nav .back-to-main {
+		display: flex !important;
+  	justify-content: flex-end !important;
+  	margin-left: -40px !important;
+		width: 160px !important;
+		padding: 0px 16px !important;
+	}
+}
+
+.text-center .gamipress-inline-points-coins {
+	font-size: 18px;
+	color: orange;
+	font-weight: 600;
+}
+
+.text-center .gamipress-inline-points-wrapper {
+	margin-top: 30px;
+}
+
+@media (min-width: 560px) {
+	.text-center .gamipress-inline-points-exploration-points {
+		margin-left: 30px;
+		margin-top: 0;
+	}
+	
+	.text-center .gamipress-inline-points-wrapper {
+		flex-direction: row;
+	}
+	
+}
+
+#pojo-a11y-toolbar .pojo-a11y-toolbar-toggle a, .pojo-a11y-toolbar-overlay {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-left: none !important;
+}
+
+/* BLOG STYLES */
+
+body .blog article .post-featured-content > a::after, body .blog .gem-simple-gallery .gem-gallery-item a::after {
+	content: '\e621' !important;
+}
+
+/* MAIN GAME PAGE STYLES */
+
+.scroll-top-button:hover::before {
+	border-radius: 15px;
+	background: #fff;
+	color: #1e73bee0;
+	border: 2px solid #1e73bee0;
+	line-height: 1.9;
+}
+
+
+.scroll-top-button::before {
+	border-radius: 15px;
+	background: #1e73bee0;
+	color: white;
+	backdrop-filter: blur(6px);
+}
+
+.scroll-top-button {
+	opacity: 1 !important;
+}
+
+.pages > a, .pages + a, .portfolio-navigator .prev {
+	border-radius: 10px;
+	border: 1px solid #1e73be;
+	font-size: 16px !important;
+}
+
+.portfolio:not(.background-style-transparent):not(.disabled-hover):not(.list-style) .portfolio-item:hover .wrap > .caption {
+	background-color: #f6f9fd !important;
+}
+
+.completed-label i {
+	margin-right: 10px;
+	font-size: 20px;
+	vertical-align: text-bottom;
+}
+
+.completed-label i::before {
+	color: #d8ffd5 !important;
+}
+
+.completed-label {
+	position: absolute !important;
+	top: 20px;
+	right: 20px;
+	z-index: 5;
+	background: #008000a1;
+	color: #53ff53;
+	font-weight: 600;
+	padding: 10px 20px;
+	border-radius: 50px;
+	backdrop-filter: blur(6px);
+}
+
+.coming-soon {
+	position: absolute !important;
+	top: 20px;
+	right: 20px;
+	opacity: 1 !important;
+	z-index: 5 !important;
+	background: #fff;
+	color: #1e73be;
+	font-weight: 600;
+	padding: 10px 20px;
+	border-radius: 50px;
+	backdrop-filter: blur(6px);
+}
+
+.coming-soon i {
+	margin-right: 10px;
+	font-size: 20px;
+	vertical-align: text-bottom;
+}
+
+.coming-soon i::before {
+	color: #1e73be !important;
+}
+
+.portfolio-item .image-inner:has( .coming-soon)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+}
+
+.portfolio-item:has( .coming-soon) .requirements {
+	display: none !important;
+}
+
+.locked-label i::before {
+    color: #ffeded !important;
+    font-family: 'FontAwesome';
+    font-style: normal;
+    vertical-align: bottom;
+}
+
+.locked-label {
+    position: absolute;
+    top: -60%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 5;
+    background: #b10000bf;
+    color: #ffb1b1;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+}
+
+.locked-label i {
+    margin-right: 10px;
+    font-size: 22px;
+    vertical-align: top;
+}
+
+.gamipress-restrict-content-unlock-post-with-points-button {
+    background: white;
+    color: #3883c5;
+    padding: 0px 20px;
+    border: 2px solid #3883c5;
+    border-radius: 10px;
+		font-weight: 600;
+		text-transform: uppercase;
+		transition: all 0.25s ease-in-out;
+}
+
+.gamipress-restrict-content-unlock-post-with-points-button:hover {
+    background: #3883c5;
+    color: white;
+}
+
+.portfolio-item .requirements ul {
+    padding: 0;
+    position: absolute;
+    top: -42%;
+    font-size: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    background: #f6631bcc;
+    padding: 15px 20px;
+    border-radius: 100px;
+}
+
+.portfolio-item .requirements ul {
+	list-style: none !important;
+}
+
+.portfolio-item:has( div.locked-label) .image-inner > div, .portfolio-item:hover:has( div.locked-label) .image-inner > div {
+	opacity: 0.5;
+  filter: saturate(0) !important;
+}
+
+.portfolio-item:has( .locked-label) .portfolio-image-slider .btn {
+	display: none !important;
+}
+
+.portfolio-item:has( .coming-soon) .locked-label {
+    display: none;
+}
+
+.portfolio-item .image-inner {
+	border-radius: 30px;
+}
+
+.portfolio-item .wrap > .caption .info {
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.points-to-be-rewarded span {
+    color: #125b9a;
+    font-weight: 500;
+}
+
+.image.type-thegem_pf_item {
+	background: #fff;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+.portfolio-item:hover .image.type-thegem_pf_item {
+	background: transparent;
+}
+
+.portfolio-top-panel .portfolio-top-panel-right .portfolio-search-filter:not(.input-style) .portfolio-search-filter-form {
+	border-radius: 20px;
+}
+
+.lets-talk-button .gem-button, .lets-talk-button-sticky .gem-button {
+  width: 45px !important;
+}
+
+.difficulty span {
+	font-weight: bold;
+}
+
+.difficulty.easy span {
+	color: green;
+}
+
+.difficulty.normal span {
+	color: orange;
+}
+
+.difficulty.hard span {
+	color: red;
+}
+
+.difficulty.expert span {
+	color: purple;
+}
+
+.portfolio-grid .portfolio-item .wrap > .caption .title {
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.portfolio.portfolio-grid .portfolio-item .read-more-button .gem-button {
+	border-width: 2px;
+	font-size: 18px;
+	padding: 25px 30px;
+	border-radius: 10px;
+}
+
+.portfolio-image-slider > button.btn {
+	background: #ffffffbf !important;
+  border-radius: 50%;
+}
+
+.portfolio-image-slider > .btn-next {
+	right: 10px !important;
+}
+
+.portfolio-image-slider > .btn-prev {
+	left: 10px !important;
+}
+
+.um-avatar {
+	border-radius: 50%;
+	transform: scale(1.2);
+}
+
+.portfolio-grid .caption {
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.portfolio-grid .portfolio-image-slider.autoscroll {
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+.portfolio-grid .portfolio-image-slider .slide img, .portfolio-grid .thegem_pf_item img {
+	border-radius: 30px;
+}
+
+.page-id-24452 .gamipress-share-buttons-label, .page-id-24452 .gamipress-share-buttons {
+	display: none !important;
+}
+
 /* STEP GAMES STYLES */
+
+@media (max-width: 580px) {
+	.steps-nav .gem-button span {
+		display: none !important;
+	}
+}
+
+.game-preloader, .game-preloader h2 {
+	text-align: center;
+}
+
+html:has( .single-thegem_pf_item) {
+	margin: 0 !important;
+}
+
+.player-points {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.player-points .gamipress-inline-points {
+	margin: 0 12px;
+}
+
+.gamipress-inline-points-separator {
+	display: none;
+}
+
+.level-title {
+	text-align: center;
+}
+
+.gamipress-user-points:not(.gamipress-layout-none) {
+	margin-bottom: 0 !important;
+}
+
+.single-thegem_pf_item .scroll-top-button, .single-thegem_pf_item #pojo-a11y-toolbar, .cky-btn-revisit-wrapper {
+	display: none !important;
+}
+
+.steps-nav .gamipress-points {
+	padding: 0 !important;
+}
+
+.steps-nav .gamipress-user-points-exploration-points {
+	margin-top: 8px;
+}
 
 .steps-nav.nav-focus {
 	position: fixed !important;
@@ -19,16 +419,22 @@ body *::selection {
   max-width: none;
 }
 
-@media (max-width: 680px) {
-	
-.steps-nav.nav-focus .gem-button-container.next-game {
-	float: right;
+.wpb_row.game-step, .game-step .wpb_content_element {
+	margin-bottom: 0 !important;
 }
 
-.steps-nav.nav-focus .gem-button-container.prev-game {
-	float: left;
+.game-step .h5p-question-content {
+	margin: 0 !important;
 }
 
+.steps-nav .prev-game a.gem-button i, .steps-nav .next-game a.gem-button i, .steps-nav .finish-game a.gem-button i {
+	vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+	.prev-game {
+		float: inline-end !important;
+	}
 }
 
 .game-area-wrapper:has( .nav-focus) {
@@ -86,7 +492,7 @@ body *::selection {
     cursor: not-allowed;
 }
 
-.prev-game a.hidden, .next-game a.hidden {
+.prev-game a.hidden, .next-game a.hidden, .finish-game a.hidden {
 	display: none !important;
 }
 
@@ -100,6 +506,8 @@ body *::selection {
 	pointer-events: none !important;
 	touch-action: none !important;
 	opacity: 0 !important;
+	top: 0;
+	height: 0;
 }
 
 
@@ -108,15 +516,18 @@ body *::selection {
 
 /* CONFETTI EFFECT STYLES START */
   
-  #confetti-canvas {
+#confetti-canvas {
 		z-index: -1;
-		position: fixed;
+		position: absolute;
+		left: 0 !important;
 		top: 0 !important;
     overflow-y: hidden;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
-  }
+		max-height: 100% !important;
+		height: 100% !important;
+}
 
 #confetti-canvas.visible {
 		z-index: 5;
@@ -177,15 +588,15 @@ body.single-thegem_pf_item .block-content:last-of-type {
     align-items: center;
 }
 
-.portfolio-item:has( div.coming-soon) {
-	opacity: 0.5; 
+.portfolio-item:has( .coming-soon) .caption {
+	opacity: 0.5;
 }
 
 .portfolio-item:has( div.locked-label) .image-inner > div {
 	opacity: 0.5; 
 }
 
-.portfolio-item:has( div.coming-soon) {
+.portfolio-item:has( .coming-soon) {
 	touch-action: none !important;
 	pointer-events: none !important;
 }

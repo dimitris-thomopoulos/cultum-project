@@ -96,6 +96,16 @@
 
 /*TAROT FLASHCARDS STYLES*/
 
+.h5p-card, .h5p-imagetext, .h5p-answer, .h5p-answer .h5p-input, .h5p-flashcards .h5p-answer .h5p-textinput, .h5p-button.h5p-check-button {
+  font-family: "Poppins" !important;
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.h5p-description, .h5p-game-map-exercise-headline-text, .h5p-game-map-main * {
+  font-family: "Poppins" !important;
+}
+
 .h5p-flashcards {
     border-radius: 30px !important;
 }
