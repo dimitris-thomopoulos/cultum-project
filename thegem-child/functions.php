@@ -153,14 +153,9 @@ function enqueue_multi_step() {
 add_action('wp_enqueue_scripts', 'enqueue_multi_step');
 
 
-
-
-// get user data
-
-//$user_id = get_current_user_id();
-//$user_data = get_user_meta($user_id, 'user_specific_data', true);
-
-//if ($user_data) {
-    // Use the $user_data as needed
-//    echo 'User data: ' . print_r($user_data, true);
-//}
+// dimitris - Ultimate memeber redirect - refresh current page after registration
+add_action( 'um_registration_after_auto_login', 'my_registration_after_auto_login', 10, 1 );
+	function my_registration_after_auto_login( $user_id ) {
+		wp_redirect( get_permalink() );
+		exit();
+}

@@ -25,9 +25,9 @@ if (baseUrl == 'https://cultum.gr/capital') {
         
         H5P.externalDispatcher.on('xAPI', function (event) {
             
-            console.log('game was loaded!');
+//            console.log('game was loaded!');
             
-            console.log('event detected: ', event);
+//            console.log('event detected: ', event);
             
             
             // when visiting the capital inner game page, land the player into the latest level they have unlocked
@@ -48,7 +48,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             
             //  show the "Finish Game" button if the level which the user just completed is the final level
 
-            console.log('august running');
+//            console.log('august running');
             window.hasCompletedAllLevels = true;
 
             for (let j=1; j<=window.gameSteps.length; j++) {
@@ -95,7 +95,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
                 
                 if (typeof(eventResult.score) !== "undefined") {
                     var scoreObject = event.data.statement.result.score['raw'];
-                    console.log('score: ', scoreObject);
+//                    console.log('score: ', scoreObject);
                     var eventScaledScore = event.data.statement.result.score["scaled"];
                 } else {
                     var eventScaledScore = {};
@@ -114,7 +114,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             // check if a game level is completed
             if ( ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (window.isVirtualTour) ) || ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" && eventDefinition["interactionType"] !== "choice" && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) ) {
                 
-                console.log('Completed event detected.');
+//                console.log('Completed event detected.');
                 
                 
                 //  if not already completed the specific game, update statically the points and coins of the player in the UI and pop the confetti

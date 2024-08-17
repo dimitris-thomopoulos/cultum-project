@@ -33,11 +33,11 @@ jQuery(document).ready(function($) {
 
     checkUserAchievement(userId, achievementId).done(function(hasEarned) {
         if (hasEarned) {
-            console.log('User has earned the achievement.');
+//            console.log('User has earned the achievement.');
             // Store the result in a JavaScript variable
             window.userHasEarnedAchievement = true;
         } else {
-            console.log('User has not earned the achievement.');
+//            console.log('User has not earned the achievement.');
             window.userHasEarnedAchievement = false;
         }
     });

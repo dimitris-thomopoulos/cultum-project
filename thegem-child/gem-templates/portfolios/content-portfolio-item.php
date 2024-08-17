@@ -29,7 +29,7 @@ $thegem_classes[] = 'portfolio-item-template';
 //dimitris - DEFINE CAPITAL ITEMS CLASSES IN GRID: DISABLED, LOCKED, UNLOCKED
 
 $points_type = 'exploration-points'; // replace with your actual points type
-$user_points = gamipress_get_user_points( $user_id, $points_type );
+$user_points = gamipress_get_user_points( get_current_user_id(), $points_type );
 
 
 
@@ -602,7 +602,7 @@ if (!isset($portfolio_item_size)) { ?>
                                                 
                                                 if (str_contains($capitals_unlocked, $capital_name) ) {
                                                     $is_already_unlocked = 1;
-                                                } elseif ($is_capital_set != '' && ($user_points < $is_capital_set)){
+                                                } elseif ($is_capital_set != '' && ($user_points < $is_capital_set) && !get_field('coming-soon')){
                                                     $is_already_unlocked = 0;
                                                     echo '<div class="locked-label locked-capital"><i class="fa-solid fa-lock"></i>LOCKED</div>' ;
                                                 }

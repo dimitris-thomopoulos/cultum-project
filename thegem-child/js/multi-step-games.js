@@ -3,7 +3,21 @@
 var pageUrl = window.location.href;
 var baseUrl = pageUrl.substring(0, 25);
 
-if (baseUrl == 'https://cultum.gr/capital') {
+window.logoutBtn = document.querySelector('.lets-talk-button.hide-for-guests');
+window.logoutBtnSticky = document.querySelector('.lets-talk-button-sticky.hide-for-guests');
+        
+if ( (window.logoutBtn !== undefined) && (baseUrl !== 'https://cultum.gr/capital') ) {
+    
+    window.logoutBtn.addEventListener('click', () => {
+        localStorage.clear();
+    });
+    
+    window.logoutBtnSticky.addEventListener('click', () => {
+        localStorage.clear();
+    });
+}
+
+if (baseUrl === 'https://cultum.gr/capital') {
     
     window.slug = document.querySelector('meta[name="page-slug"]').getAttribute('content');
     
@@ -15,7 +29,8 @@ if (baseUrl == 'https://cultum.gr/capital') {
     (function ($) {
     $( window ).on( "load", function() {
         
-        var stepsNav = document.querySelector('.steps-nav');
+        var stepsNav = document.querySelector('.steps-nav');                
+                
         window.blockContentContainer = document.querySelector('.block-content');
         window.pageTitle = document.getElementById('page-title');
         
@@ -24,8 +39,8 @@ if (baseUrl == 'https://cultum.gr/capital') {
         let gamePreloader = document.querySelector('.game-preloader');
         gamePreloader.classList.add('hidden-step');
         
-        console.log('loaded!');
-        console.log(window.slug);
+//        console.log('loaded!');
+//        console.log(window.slug);
             
         window.nextLevelBtn = document.querySelector('.next-game a.gem-button');
         window.prevLevelBtn = document.querySelector('.prev-game a.gem-button');
@@ -128,7 +143,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
         // Handle previous button logic
         function handlePrevClick(e) {
             
-            console.log('clicked!');
+//            console.log('clicked!');
             e.preventDefault();
 
             window.currentStep--;
@@ -136,14 +151,14 @@ if (baseUrl == 'https://cultum.gr/capital') {
             //  Hide the level from which the player is leaving
             window.gameLevels[window.currentStep].classList.add('hidden-step');
             
-            console.log('the current step is:', window.currentStep);
+//            console.log('the current step is:', window.currentStep);
             
             multiStepLogic();
         }
 
         // Handle next button logic
         function handleNextClick(e) {
-            console.log('clicked!');
+//            console.log('clicked!');
             e.preventDefault();
             
             window.currentStep++;
@@ -151,7 +166,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             // Show the new current step and hide the old one
             window.gameLevels[window.currentStep - 2].classList.add('hidden-step');
 
-            console.log('the current step is:', window.currentStep);  
+//            console.log('the current step is:', window.currentStep);  
             
             multiStepLogic();
         }
