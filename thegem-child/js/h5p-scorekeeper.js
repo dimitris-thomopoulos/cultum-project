@@ -114,7 +114,7 @@ if (baseUrl == 'https://cultum.gr/capital') {
             // check if a game level is completed
             if ( ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (window.isVirtualTour) ) || ( event.getVerb() === 'completed' && (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( typeof(eventDefinition["correctResponsesPattern"]) !== "undefined" && eventDefinition["interactionType"] !== "choice" && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) || ( (typeof scoreObject !== "undefined") && (eventScaledScore === 1) && (typeof event.data.statement.object.definition.extensions["http://h5p.org/x-api/h5p-subContentId"] === "undefined") ) ) {
                 
-//                console.log('Completed event detected.');
+                console.log('Completed event detected.');
                 
                 
                 //  if not already completed the specific game, update statically the points and coins of the player in the UI and pop the confetti

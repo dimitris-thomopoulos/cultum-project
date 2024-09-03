@@ -79,11 +79,12 @@ if (baseUrl === 'https://cultum.gr/capital') {
             
             // smooth scroll to top of current game, if player has completed at least the first level. Add a bit of delay to allow time for the iframe games to load on the DOM.
             // WARNING - do NOT change the "nearest" option for block attribute, otherwise the page height will break
-            if (localStorage.getItem(`${slug}GameNo-1-Completed`)) {
-                setTimeout(() => {
-                       window.blockContentContainer.scrollIntoView({ behavior: "smooth", block: "nearest" });
-                }, 500);
-            }
+            
+            window.blockContentContainer = document.querySelector('.block-content');
+            
+            setTimeout(() => {
+                window.blockContentContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
             
             switch (true) {
                 // hide the "previous level" button in the first game level
@@ -137,7 +138,7 @@ if (baseUrl === 'https://cultum.gr/capital') {
                     }
                     
                     break;
-            }   
+            }
         }
 
         // Handle previous button logic

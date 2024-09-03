@@ -9,7 +9,7 @@ require_once get_stylesheet_directory() . '/inc/utility.php';
 function h5p_alter_styles(&$styles, $libraries, $embed_type) {
   $styles[] = (object) array(
     // Path must be relative to wp-content/uploads/h5p or absolute.
-    'path' => 'https://cultum.gr/wp-content/uploads/styles-h5p.css',
+    'path' => 'https://cultum.gr/wp-content/uploads/styles-h5p-2.css',
     'version' => '?ver=0.1' // Cache buster
   );
 }

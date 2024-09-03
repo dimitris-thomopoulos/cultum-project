@@ -1,0 +1,283 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://cultum.gr/wp-content/uploads/fonts/Poppins-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://cultum.gr/wp-content/uploads/fonts/Poppins-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://cultum.gr/wp-content/uploads/fonts/Poppins-SemiBold.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://cultum.gr/wp-content/uploads/fonts/Poppins-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.h5p-game-map p, .h5p-game-map span {
+    /*color: green !important;*/
+}
+
+/*disable fullscreen*/
+.h5p-actions, iframe.h5p-iframe .h5p-actions, .toolbar-button-finish, .footer-container .h5p-joubelui-button:nth-of-type(2), .h5p-results-answer span ~ span, .sequencing-status, .status-container-stages {
+    display: none !important;
+}
+
+.h5p-game-map-toolbar-tool-bar .toolbar-headline {
+    white-space: wrap !important;
+    text-align: center;
+}
+
+/*JIGSAW PUZZLE STYLES*/
+
+/* disable fullscreen functionality for desktop devices for jigsaw puzzle and virtual tours, as they don't work properly */
+@media (min-width: 991px) {
+    .h5p-jigsaw-puzzle-title-bar, .h5p-enable-fullscreen, .toolbar-button-fullscreen {
+        display: none !important;
+    }
+}
+
+/*INTERACTIVE VIDEO STYLES*/
+
+.h5p-interactive-video .h5p-interaction.h5p-poster .h5p-interaction-outer, .h5p-interactive-video .h5p-dialog, .h5p-memory-game .h5p-memory-pop, .h5p-memory-game .h5p-memory-top {
+    border-radius: 20px !important;
+}
+
+.h5p-interactive-video .h5p-controls {
+    background: #023f75 !important;
+}
+
+.h5p-interactive-video .h5p-splash {
+    border-radius: 40px !important;
+    background: #1e73bed4 !important;
+    backdrop-filter: blur(6px) !important;
+}
+
+.h5p-interactive-video .h5p-buffered {
+    background: #166db9 !important;
+}
+
+.h5p-interactive-video .h5p-interaction.h5p-poster {
+    border-radius: 20px !important;
+}
+
+.h5p-interactive-video-bubble-endscreen-inner {
+    background: #023f75d9 !important;
+    backdrop-filter: blur(6px);
+    border-radius: 20px !important;
+}
+
+/*FIND MULTIPLE HOTSPOTS STYLES*/
+
+.hotspot-image {
+    border-radius: 25px !important;
+}
+
+.h5p-image-hotspot-question .hotspot-feedback::before {
+    left: 0 !important;
+}
+
+.h5p-image-hotspot-question .h5p-question-scorebar.h5p-question-visible {
+    margin-top: 20px;
+}
+
+.h5p-container.h5p-image-hotspot-question {
+    text-align: center;
+}
+
+.h5p-container.h5p-image-hotspot-question .h5p-question-feedback {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.898);
+    padding: 20px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+    width: auto !important;
+    display: flex;
+    margin: 0px !important;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 5px solid white;
+}
+
+.h5p-container.h5p-image-hotspot-question .h5p-question-feedback .h5p-question-feedback-content {
+    margin-bottom: 0 !important;
+}
+
+/*TAROT FLASHCARDS STYLES*/
+
+.h5p-card, .h5p-imagetext, .h5p-answer, .h5p-answer .h5p-input, .h5p-flashcards .h5p-answer .h5p-textinput, .h5p-button.h5p-check-button {
+  /*font-family: 'Poppins' !important;*/
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.h5p-game-map-toolbar-tool-bar .toolbar-headline * {
+    font-family: initial !important;
+}
+
+.h5p-flashcards {
+    border-radius: 30px !important;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button {
+    color: #fcd400 !important;
+    border-color: #ffd700 !important;
+}
+
+.h5p-flashcards .h5p-navigation .h5p-button:hover {
+    background-color: white !important;
+    color: #2a64e8 !important;
+}
+
+.h5p-flashcards .h5p-visual-progress {
+    background-color: #ffd7005e !important;
+    border-color: #ffd700 !important;
+}
+
+.h5p-flashcards .h5p-visual-progress div {
+    background-color: #ffd700 !important;
+}
+
+.h5p-show-results .h5p-show-results-icon::before {
+    color: #ffd700 !important;
+}
+
+.h5p-card.h5p-previous, .h5p-card.h5p-next {
+    opacity: 0.5;
+    filter: saturate(0);
+}
+
+.h5p-flashcard-overlay, .h5p-solution {
+    display: none !important;
+}
+
+.h5p-flashcards .h5p-foot {
+    border-radius: 2em !important;
+}
+
+.h5p-flashcards .h5p-card.h5p-current .h5p-cardholder {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.h5p-flashcards .h5p-imageholder {
+    background-color: transparent !important;
+}
+
+.h5p-flashcards.h5p-standalone {
+	background: linear-gradient(45deg, #432411, #71573b);
+}
+
+.h5p-flashcards .h5p-description, .h5p-flashcards .h5p-results-list-item, .h5p-flashcards .h5p-results-retry-button {
+    border-color: #fbfbfb !important;
+    color: #fbfbfb !important;
+}
+
+.h5p-flashcards .h5p-results-retry-button:hover {
+    background-color: #fbfbfb !important;
+    color: #3c465d !important;
+}
+
+/*MEMORY GAME STYLES*/
+
+.h5p-memory-game .h5p-memory-card .h5p-front {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.h5p-game-map-stage-label-container .h5p-game-map-stage-label .h5p-game-map-stage-label-inner {
+    -webkit-line-clamp: initial !important;
+}
+
+.media-screen .media-screen-bar {
+    background-color: transparent !important;
+}
+
+.media-screen .media-screen-medium.h5p-image > img {
+    box-shadow: none !important;
+}
+
+.h5p-content > .h5p-container.h5p-standalone, .h5p-frame {
+    border: none !important;
+}
+
+.h5p-game-map .h5p-game-map-toolbar-tool-bar {
+    background-color: #3773ae !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 90, 220, 0.7) !important;
+    margin-bottom: 20px !important;
+}
+
+.h5p-game-map .h5p-game-map-toolbar-tool-bar .toolbar-headline {
+    color: white !important;
+}
+
+.h5p-game-map .status-container .status-container-values span.value, .h5p-game-map .status-container .status-container-values span.max-value, .h5p-game-map .h5p-game-map-toolbar-tool-bar {
+    color: #ffbf00 !important;
+}
+
+.h5p-game-map .status-container.status-container-score::before {
+    color: #ffdf33 !important;
+}
+
+.h5p-game-map-toolbar-tool-bar .toolbar-buttons .toolbar-button.toolbar-button-fullscreen.toolbar-button-enter-fullscreen::before, .h5p-game-map-toolbar-tool-bar .toolbar-buttons .toolbar-button.toolbar-button-audio::before {
+    color: #ffd42b;
+}
+
+.h5p-game-map .toolbar-button {
+    border-color: #ffd42b !important;
+}
+
+.h5p-game-map-exercise .h5p-game-map-exercise-content-container .h5p-game-map-exercise-content {
+    border-radius: 1rem !important;
+}
+
+.h5p-game-map-background-image, .h5p-game-map-exercise {
+    border-radius: 20px;
+}
+
+.h5p-combination-lock-case {
+    background: linear-gradient(#a16200, #53250e) !important;
+    border-radius: .5rem;
+    box-shadow: inset 0 -0.5rem .25rem -0.25rem #a18282,0 2px 3px 1px rgba(0,0,0,.5);
+    display: flex;
+    margin-bottom: .25rem;
+    padding: 1rem;
+}
+
+.h5p-combination-lock-case .h5p-combination-lock-elements {
+    background: linear-gradient(#744f35, #2e180d) !important;
+}
+
+/*DRAG N DROP GAME*/
+
+.h5p-dragquestion .h5p-inner {
+    background-size: cover !important;
+    background-position: center bottom !important;
+}
+
+.h5p-dragquestion .h5p-draggable {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
